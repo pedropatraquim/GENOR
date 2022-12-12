@@ -77,7 +77,7 @@ process jackhammer {
     path "*_out.txt"
   script:
   """
-   jackhmmer  --seed 1 --cpu $task.cpus -o  $id'_'$lib'_out.txt' --tblout $id'_'$lib'_table.txt' --domtblout $id'_'$lib'_doms.txt' sequence.fasta lib.fasta
+   jackhmmer  --seed 1 --cpu $task.cpus -o $id'_'$lib'_out.txt' --tblout $id'_'$lib'_table.txt' --domtblout $id'_'$lib'_doms.txt' sequence.fasta lib.fasta
   """
 }
 
@@ -150,7 +150,7 @@ process get_reciprocal_seqs {
     tuple val(hit),val(id),val(lib),path ('lib.fasta') from reciprocal_hits.splitCsv()
 
   output:
-    tuple val(hit),val(id),val(lib),path ("*.fasta") into reciprocal_hits_seqs
+    tuple val(hit),val(id),val(lib),path into reciprocal_hits_seqs
 
   script:
   """
