@@ -56,7 +56,8 @@ process get_queries {
 
   script:
   """
-  samtools faidx $db $id -o ${id}.fasta
+  echo $id >> ${id}_ids.txt
+  seqtk subseq $db ${id}_ids.txt > ${id}.fasta
   """
 }
 
@@ -156,7 +157,6 @@ process get_reciprocal_seqs {
   """
     echo $hit >> ${hit}_ids.txt
     seqtk subseq lib.fasta ${hit}_ids.txt > ${hit}_seq.fasta
-    #samtools faidx lib.fasta -r ${lib}_ids.txt -o ${lib}_hits.fasta;
   """
 }
 
