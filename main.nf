@@ -154,7 +154,7 @@ process get_reciprocal_seqs {
 
   script:
   """
-    samtools faidx lib.fasta $hit -o ${hit}.fasta
+    samtools faidx lib.fasta $hit > ${hit}.fasta
   """
 }
 
