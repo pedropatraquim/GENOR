@@ -6,8 +6,8 @@
 
  #  GENOR - smORF homologues
 
- [![Discord](https://img.shields.io/discord/698720578055700650?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2&style=flat-square)](https://discord.gg/XXXXX)
- [![GitHub latest release version](https://img.shields.io/github/v/release/saltysimulations/salty-747.svg?style=flat)](https://github.com/XXXXXXX)
+ [![Discord](https://img.shields.io/discord/698720578055700650?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2&style=flat-square)](https://discord.gg/_____fakelink)
+ [![GitHub latest release version](https://img.shields.io/github/v/release/_____fakelink)](https://github.com/XXXXXXX)
  [![Github All Releases download count](https://img.shields.io/github/downloads/XXXXX)](https://github.com/XXXXXX)
  [![GitHub contributors](https://img.shields.io/github/contributors/XXXXXXt)](https://github.com/XXXXXXX)
 
