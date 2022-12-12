@@ -1,1 +1,2 @@
-Dana,/Users/pedropatraquim/Documents/ESTs/Dana_EST_getORF.fasta
+Dana,/Users/pedropatraquim/GENOR/assets/target_databases/Dana_EST_getORF.fasta
+Dvir,/Users/pedropatraquim/GENOR/assets/target_databases/Dvir_EST_getORF.fasta
