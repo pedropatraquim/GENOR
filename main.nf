@@ -97,7 +97,7 @@ process get_hits {
   """
     grep -v "#" doms.txt  | cut -f1 -d" "| sort | uniq | grep . | cat > ${lib}_ids.txt
     if test -s ${lib}_ids.txt; then
-      samtools faidx lib.fasta -r ${lib}_ids.txt -o ${lib}_hits.fasta;
+      seqtk subseq lib.fasta ${lib}_ids.txt > ${lib}_hits.fasta;
     fi
   """
 }
