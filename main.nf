@@ -56,7 +56,7 @@ process get_queries {
 
   script:
   """
-  samtools faidx $db $id > ${id}.fasta
+  samtools faidx $db $id -o ${id}.fasta
   """
 }
 
@@ -96,7 +96,7 @@ process get_hits {
   """
     grep -v "#" doms.txt  | cut -f1 -d" "| sort | uniq | grep . | cat > ${lib}_ids.txt
     if test -s ${lib}_ids.txt; then
-      samtools faidx lib.fasta -r ${lib}_ids.txt > ${lib}_hits.fasta;
+      samtools faidx lib.fasta -r ${lib}_ids.txt -o ${lib}_hits.fasta;
     fi
   """
 }
@@ -154,7 +154,7 @@ process get_reciprocal_seqs {
 
   script:
   """
-    samtools faidx lib.fasta $hit > ${hit}.fasta
+    samtools faidx lib.fasta $hit -o ${hit}.fasta
   """
 }
 
