@@ -1,0 +1,1 @@
+lib	id	asterisks	colons	dots	query lenght	hit lenght	score
