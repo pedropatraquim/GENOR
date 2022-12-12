@@ -147,15 +147,16 @@ process get_reciprocal_seqs {
 
 
   input:
-    tuple val(hit),val(id),val(lib),path ('lib.fasta') from reciprocal_hits.splitCsv()
+    tuple val(hit),val(id),val(lib),path('lib.fasta') from reciprocal_hits.splitCsv()
 
   output:
-    tuple val(hit),val(id),val(lib) into reciprocal_hits_seqs
+    tuple val(hit),val(id),val(lib),path("*_seq.fasta") into reciprocal_hits_seqs
 
   script:
   """
-    echo $hit >> ${hit}.txt
-    seqtk subseq lib.fasta ${hit}.txt > ${hit}.fasta
+    echo $hit >> ${hit}_ids.txt
+    seqtk subseq lib.fasta ${hit}_ids.txt > ${hit}_seq.fasta
+    #samtools faidx lib.fasta -r ${lib}_ids.txt -o ${lib}_hits.fasta;
   """
 }
 
