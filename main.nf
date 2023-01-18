@@ -14,7 +14,7 @@ def helpMessage() {
 
     The typical command for running the pipeline is as follows:
 
-    nextflow run icases/getit --ids ids_file.txt --db db.fasta --libs libs.txt
+    nextflow run Coulab/GENOR --ids ids_file.txt --db db.fasta --libs libs.txt
 
     Options:
       --ids                         file containing the ids of the proteins, one per line
@@ -234,10 +234,28 @@ process collect_scores {
    cp  $projectDir/assets/scores_template.txt ${id}_scores.txt
    cat $score_file >> ${id}_scores.txt
    cp  ${id}_scores.txt $projectDir/${id}_scores.txt
-
   """
 }
 
+
+process make {
+  tag "getting sequence for query $id"
+  //echo true
+  publishDir "$params.outdir/$id/" , mode:'copy'
+  //errorStrategy 'ignore'
+
+  input:
+    val id
+
+  output:
+    tuple val(id), path('*.fasta') optional true into seqsOut
+
+  script:
+  """
+  echo $id >> ${id}_ids.txt
+  seqtk subseq $db ${id}_ids.txt > ${id}.fasta
+  """
+}
 
 
 // Show help message if --help specified
