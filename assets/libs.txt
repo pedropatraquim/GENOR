@@ -1,0 +1,3 @@
+Agam,/home/ppat/GENOR/ESTs/Agam_EST_getORF.fasta
+Aaeg,/home/ppat/GENOR/ESTs/Aaeg_EST_getORF.fasta
+Dana,/home/ppat/GENOR/ESTs/Dana_EST_getORF.fastaDere,/home/ppat/GENOR/ESTs/Dere_EST_getORF.fastaDgri,/home/ppat/GENOR/ESTs/Dgri_EST_getORF.fastaDmel,/home/ppat/GENOR/ESTs/Dmel_EST_getORF.fastaDmoj,/home/ppat/GENOR/ESTs/Dmoj_EST_getORF.fastaDpse,/home/ppat/GENOR/ESTs/Dpse_EST_getORF.fastaDsec,/home/ppat/GENOR/ESTs/Dsec_EST_getORF.fastaDsim,/home/ppat/GENOR/ESTs/Dsim_EST_getORF.fastaDvir,/home/ppat/GENOR/ESTs/Dvir_EST_getORF.fastaDwil,/home/ppat/GENOR/ESTs/Dwil_EST_getORF.fastaDyak,/home/ppat/GENOR/ESTs/Dyak_EST_getORF.fasta
