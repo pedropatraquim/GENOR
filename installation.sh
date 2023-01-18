@@ -5,10 +5,10 @@ curl -s https://get.nextflow.io | bash
 chmod +x nextflow
 
 #Create GENOR directory
-mkdir GENOR
-cd GENOR
+mkdir /home/user/GENOR
+cd /home/user/GENOR
 
-#Install JAVA (UPO Cluster has Java v. 1.8 but Nextflow needs 17/18)
+#Install JAVA (Nextflow needs v17/v18)
 curl -s "https://get.sdkman.io" | bash
 sdk install java
 
