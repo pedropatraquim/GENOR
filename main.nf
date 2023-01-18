@@ -233,9 +233,24 @@ process collect_scores {
   """
    cp  $projectDir/assets/scores_template.txt ${id}_scores.txt
    cat $score_file >> ${id}_scores.txt
-   cp  ${id}_scores.txt $projectDir/${id}_scores.txt
   """
 }
+
+process collect_scores_one_file {
+  tag "collect scores in single file for all queries $id"
+  publishDir "$params.outdir/", mode: 'copy'
+
+  input:
+     tuple val(id),path(score_file) from scores.groupTuple()
+  output:
+     path "$projectDir/${id}_all_scores.txt"
+  script:
+  """
+   cp ${id}_scores.txt $projectDir/${id}_scores.txt
+   cat ${id}_scores.txt > all_scores.txt
+  """
+}
+
 
 
 // Show help message if --help specified
