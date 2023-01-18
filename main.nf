@@ -233,6 +233,8 @@ process collect_scores {
   """
    cp  $projectDir/assets/scores_template.txt ${id}_scores.txt
    cat $score_file >> ${id}_scores.txt
+   cp  ${id}_scores.txt $projectDir/${id}_scores.txt
+
   """
 }
 
