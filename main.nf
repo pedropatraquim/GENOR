@@ -236,6 +236,7 @@ process collect_scores {
   """
 }
 
+
 process collect_scores_one_file {
   tag "collect scores in single file for all queries $id"
   publishDir "$params.outdir/", mode: 'copy'
@@ -250,8 +251,6 @@ process collect_scores_one_file {
    cat ${id}_scores.txt > all_scores.txt
   """
 }
-
-#
 
 
 // Show help message if --help specified
