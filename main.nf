@@ -238,14 +238,17 @@ process collect_scores {
 
 
 process collect_scores_one_file {
-  tag "collect scores in single file for all queries"
+  tag "collect scores in single file for all queries $id"
 
-  shell:
-  """
+  output:
+     file "$params.outdir/All_scores_table.txt"
+   script:
+   """
      echo -e "filename\tlib\tid\tasterisks\tcolons\tdots\tquery lenght\thit lenght\tscore" > $params.outdir/All_scores_table.txt
-     find $params.outdir/ -maxdepth 1 -type d -exec bash -c 'for d; do for f in "\$d"/*.txt; do sed "1d;s/^/\$(basename \$f _scores.txt)\t/" "\$f" >> $params.outdir/All_scores_table.txt; done; done' bash {} \;
-  """
+     find "$params.outdir/" -maxdepth 1 -type d -exec bash -c "for d; do for f in \"\$d\"/*.txt; do sed '1d;s/^/$(basename \$f _scores.txt)\t/' \"\$f\" >> $params.outdir/All_scores_table.txt; done; done" bash {} \;
+   """
  }
+
 
 // Show help message if --help specified
 if (params.help){
