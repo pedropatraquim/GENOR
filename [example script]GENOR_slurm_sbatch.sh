@@ -13,5 +13,6 @@ module load HMMER
 module load MAFFT
 export PATH=$PATH:/home/pedropatraquim/GENOR/seqtk
 
+#rm ./nextflow/assets/pedropatraquim/GENOR
 ./nextflow pull pedropatraquim/GENOR
 nextflow run -r main pedropatraquim/GENOR --db All_lncORFs.fasta --ids lncORF_ids.txt --libs libs.txt  --profile standard --outdir All_lncORF_results
