@@ -57,7 +57,7 @@ process get_queries {
   script:
   """
   echo $id >> ${id}_ids.txt
-  seqtk subseq $db ${id}_ids.txt > ${id}.fasta
+    seqtk subseq $db ${id}_ids.txt > ${id}.fasta
   """
 }
 
@@ -239,19 +239,15 @@ process collect_scores {
 
 process collect_scores_one_file {
   tag "collect scores in single file for all queries $id"
-  publishDir "$params.outdir/", mode: 'copy'
 
-  input:
-     tuple val(id),path(score_file) from scores.groupTuple()
   output:
-     path "$projectDir/${id}_all_scores.txt"
-  script:
-  """
-   cp ${id}_scores.txt $projectDir/${id}_scores.txt
-   cat ${id}_scores.txt > all_scores.txt
-  """
-}
-
+     path "$params.outdir/All_scores_table.txt"
+   script:
+   """
+     echo -e "filename\tlib\tid\tasterisks\tcolons\tdots\tquery lenght\thit lenght\tscore" > $params.outdir/All_scores_table.txt
+     find $params.outdir/ -maxdepth 1 -type d -exec bash -c 'for d; do for f in "$d"/*.txt; do sed "1d;s/^/$(basename $f _scores.txt)\t/" "$f" >> $params.outdir/All_scores_table.txt; done; done' bash {} \;
+   """
+ }
 
 // Show help message if --help specified
 if (params.help){
