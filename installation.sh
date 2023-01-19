@@ -15,4 +15,4 @@ sdk install java
 #Install seqtk
 git clone https://github.com/lh3/seqtk.git;
 cd seqtk; make
-export PATH=$PATH:/home/user/GENOR/seqtk
+export PATH=$PATH:/home/pedropatraquim/GENOR/seqtk
