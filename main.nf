@@ -215,7 +215,7 @@ process score_alignments {
       \$dot+=  tr/\\.//;
 
     }
-    \$score=(\$asterisk*100+\$colon*70+\$dot*30)/\$query_length;
+    \$score=(\$asterisk*100+\$colon*50+\$dot*40)/\$query_length;
     print OUT "$lib\\t$hit\\t\$asterisk\\t\$colon\\t\$dot\\t\$query_length\\t\$hit_length\\t\$score\\n";
   """
 }
